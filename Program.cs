@@ -1,12 +1,11 @@
-﻿Console.WriteLine("Hello, World!");
-double valorInicial = 0;
+﻿double valorInicial = 0;
 string menu;
-Calculadora calc = new Calculadora(valorInicial);
+calculadora calc = new calculadora(valorInicial);
 
 do
 {
     Console.WriteLine("¿Que operacion desea realizar?");
-    Console.WriteLine("\n1.Suma\n2.Resta\n3.Multiplicar\n4.Dividir");
+    Console.WriteLine("\n1.Suma\n2.Resta\n3.Multiplicar\n4.Dividir\n5.Limpiar");
     int flag = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("Ingrese un numero:");
     string numero = Console.ReadLine();
@@ -28,6 +27,10 @@ do
 
         case 4:
             calc.Division(N);
+        break;
+
+        case 5:
+            calc.Limpiar();
         break;
 
         default:
