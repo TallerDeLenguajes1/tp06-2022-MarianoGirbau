@@ -1,9 +1,9 @@
 
-public class Calculadora
+public class calculadora
 {
     public double resultado;
 
-    public Calculadora (void)
+    public calculadora (double valorInicial)
     {
         resultado = valorInicial;
     }
@@ -25,6 +25,17 @@ public class Calculadora
 
     public void Division (double valor)
     {
-        resultado /= valor;
+        if (valor!=0)
+        {
+            resultado /= valor;  
+        }
+        else
+        {
+            Console.WriteLine("No se puede dividir por 0!!");
+        }
+    }
+
+    public void Limpiar (){
+        resultado = 0;
     }
 }
