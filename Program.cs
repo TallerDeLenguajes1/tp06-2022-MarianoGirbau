@@ -1,5 +1,5 @@
 ﻿double valorInicial = 0;
-string menu;
+string? menu;
 calculadora calc = new calculadora(valorInicial);
 
 do
@@ -8,7 +8,7 @@ do
     Console.WriteLine("\n1.Suma\n2.Resta\n3.Multiplicar\n4.Dividir\n5.Limpiar");
     int flag = Convert.ToInt32(Console.ReadLine());
     Console.WriteLine("Ingrese un numero:");
-    string numero = Console.ReadLine();
+    string? numero = Console.ReadLine();
     double N = Convert.ToDouble(numero);
     
     switch (flag)

@@ -1,7 +1,7 @@
 public class empleado
 {
-    public string nombre;
-    public string apellido;
+    public string? nombre;
+    public string? apellido;
     public char estadoCivil;
     public char genero;
     public DateTime fechaDeNacimiento;
@@ -66,21 +66,27 @@ public class empleado
 
     public double Adicional ()
     {
-        double adicional;
+        double adicional=0;
         if (Antiguedad()<20)
         {
-            adicional = sueldoBasico + sueldoBasico * (Antiguedad() * 0.1);
+            adicional = sueldoBasico * (Antiguedad() * 0.1);
             
-        }else if(Antiguedad()>20){
-            adicional = sueldoBasico + sueldoBasico * 0.25;
-        }else{
-            adicional = sueldoBasico;
+        }else if(Antiguedad()>=20){
+
+            adicional = sueldoBasico * 0.25;
+
         }
 
-        if (cargo==cargos.ingeniero)
+        if (cargo==cargos.ingeniero || cargo==cargos.especialista)
         {
-            
+            adicional = adicional + sueldoBasico * (0.5); // 50%
         }
+        
+        if (estadoCivil=='C')
+        {
+            adicional += 15000;
+        }
+
         return adicional;
     }
 }
